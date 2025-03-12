@@ -1,15 +1,11 @@
-import { LeftContext } from "./context/LeftContext"
-import { MiddleContext } from "./context/Middlecontext"
-import { RightContext } from "./context/RightContex"
-import "./scss/pages/home.scss"
+import { Home } from "./pages/Home"
+
 
 function App() {
 
   return (
-    <div className="home">
-    <LeftContext/>
-    <MiddleContext/>
-    <RightContext/>
+    <div className="main">
+    <Home/>
     </div>
   )
 }

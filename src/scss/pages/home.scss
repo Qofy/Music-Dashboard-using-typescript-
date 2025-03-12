@@ -1,7 +1,11 @@
 .home {
   display: flex;
-  flex-direction: row; 
-  gap: 2rem;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between; 
+  width: 95%;
+  height: inherit;
+  margin: 10px auto;
+  position: relative;
+  
 }
 

@@ -1,4 +1,6 @@
 import { RightSide } from "../pages/RightSide";
+import "../scss/context/rightcontext.scss"
+
 
 export function RightContext(){
   return(
