@@ -1,0 +1,15 @@
+@use "../abstract/variables.scss" as *;
+
+@mixin display-with-small-space{
+  display: flex;
+    align-items: center;
+    gap: $small-gap;
+    width: 93%;
+}
+
+@mixin display-with-large-space{
+  display: flex;
+    align-items: center;
+    gap: $larg-gap;
+    width: 98%;
+}

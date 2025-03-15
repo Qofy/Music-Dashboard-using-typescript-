@@ -1,0 +1,28 @@
+@use "../abstract/mixin.scss" as *;
+@use "../abstract/variables.scss" as *;
+
+.leftcm2{
+
+  &__item{
+    @include display-with-large-space; 
+
+  }
+
+  &__item:hover{
+    // padding: .5rem 3rem;
+    background-color: rgb(111, 106, 106);
+    border-radius: .5rem;
+  }
+
+  &__playlist-item:hover{
+    // padding: .5rem 3rem;
+    background-color: $primary-color1;
+    border-radius: .5rem;
+  }
+
+
+  &__playlist-text{
+    font-weight: 400;
+    font-size: large;
+  }
+}

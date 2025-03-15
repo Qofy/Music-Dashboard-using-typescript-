@@ -1,9 +1,18 @@
 @use "./scss/pages/home.scss" as *;
 
+@use "./scss/abstract/variables.scss" as *;
+@use "./scss/abstract/mixin.scss" as *;
+
+
+
 
 @use "./scss/context/leftcontext.scss" as *;
 @use "./scss/context/middlecontext.scss" as *;
 @use "./scss/context/rightcontext.scss" as *;
+
+
+@use "./scss/component/logo.scss" as *;
+
 
 :root{
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
