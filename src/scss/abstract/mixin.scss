@@ -13,3 +13,23 @@
     gap: $larg-gap;
     width: 98%;
 }
+
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin position-absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

@@ -1,8 +1,12 @@
+import { Slider } from "../component/Slider";
 
-export function MiddleSide(){
-  return(
+
+export function MiddleSide() {
+
+  return (
     <div className="middle-side">
-    MiddleSide
+      <Slider/>
     </div>
-  )
+  );
 }
+
