@@ -1,0 +1,137 @@
+@use "../abstract/variables.scss" as *;
+@use "../abstract/mixin.scss" as *;
+
+.release-wrapper {
+  padding: 0 20px;
+}
+
+.release {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 20px;
+  border-radius: 8px;
+  // background-color: $background-color;
+
+  &__header {
+    @include flex(row, space-between, center);
+    margin-bottom: 20px;
+    
+    h3 {
+      @include flex(row, flex-start, center);
+      font-size: 1.5rem;
+      color: $white;
+      gap: 10px;
+      
+      .play-icon {
+        color: $primary-color1;
+      }
+    }
+    
+    p {
+      cursor: pointer;
+      color: $primary-color1;
+      font-weight: 500;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  &__content {
+    @include flex(row, flex-start, stretch);
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    
+    // Hide scrollbar but keep functionality
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+  }
+  
+  &__item {
+    min-width: 180px;
+    max-width: 180px;
+    
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include transition();
+      }
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        @include flex(row, center, center);
+        @include transition();
+        opacity: 0;
+        
+        .play-button {
+          color: white;
+          font-size: 2rem;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+      }
+      
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+        
+        .overlay {
+          background-color: $hover-color;
+          opacity: 1;
+        }
+      }
+    }
+    
+    &:hover {
+      .release__title {
+        color: $primary-color1;
+      }
+    }
+  }
+  
+  &__title {
+    font-weight: 600;
+    margin: 0;
+    font-size: 0.9rem;
+    color: $text-color;
+    @include transition();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  &__artist {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 5px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

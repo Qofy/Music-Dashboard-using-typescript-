@@ -1,13 +1,15 @@
 import { useState, useEffect, useCallback } from "react";
 import "../scss/component/trendslider.scss";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search } from "lucide-react";
 import img1 from "../images/t3.webp";
 import img2 from "../images/t2.jpg";
 import img3 from "../images/trendingbackground.jpg";
 import img4 from "../images/t4.jpg";
 import img5 from "../images/t5.jpg";
+ import img6 from "../images/t6.jpg";
 
-const IMAGES = [img1, img2, img3, img4, img5];
+
+const IMAGES = [img1, img2, img3, img4, img5,img6];
 
 export function Slider(){
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,6 +31,10 @@ export function Slider(){
   }, [goToNext]);
   return(
 <div className="slider-container">
+  <div className="search">
+  <input className="search-bar" type="search" placeholder="Search artists,songs,albums...." />
+  <Search className="search-icon" color="black"/>
+  </div>
         <div className="slider">
           {IMAGES.map((image, index) => (
             <div 

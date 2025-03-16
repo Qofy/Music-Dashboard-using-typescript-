@@ -88,4 +88,27 @@
       }
     }
   }
+  .search{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    // position: relative;
+
+    &-bar{
+      width: 60%;
+      height: 2.3rem;
+      padding-left: 2.5rem;
+      position: relative;
+      border: none;
+      border-radius: 1rem;
+      border-style: none;
+    }
+
+    &-icon{
+      position: absolute;
+      left: 21%;
+      top: 5%;
+    }
+  }
 }
