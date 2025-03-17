@@ -7,14 +7,10 @@ import R5 from "../images/newRelease/r5.webp";
 import R6 from "../images/newRelease/r6.jpg";
 import R7 from "../images/newRelease/r7.jpg";
 import "../scss/component/newRelease.scss";
-
+import { ReactNode } from "react";
 
 const Release = [R1, R2, R3, R4, R5, R6, R7];
-type ArtistNameProp = {
-  artistNames: {
-    name: string
-  }[]
-}
+
 const artistName = [
   {name:"Kuame Eugene"},
   {name:"Kidi"},
@@ -23,29 +19,51 @@ const artistName = [
   {name:"Kwesi Arthur"},
   {name:"StoneBwoy"},
   {name:"Shatta Wale"},
-]
+];
 
-export function NewRelease() {
+type NewReleaseProp = {
+  rName: string;
+  Content?: ReactNode; // Add this to accept custom content
+};
+
+type ReleaseContentProps = {
+  artistNames: {
+    name: string;
+  }[];
+  rContainer?: string;
+  img: string[];
+  className1?: string;
+  className?: string;
+};
+
+export function NewRelease({rName, Content}: NewReleaseProp) {
   return (
     <div className="release-wrapper">
       <div className="release">
         <div className="release__header">
           <h3>
-            New Release <CirclePlay className="play-icon" />
+            {rName} <CirclePlay className="play-icon" />
           </h3>
           <p>See more</p>
         </div>
-        <ReleaseContent artistNames={artistName} />
+        {Content || (
+          <ReleaseContent 
+            artistNames={artistName} 
+            rContainer="release__content" 
+            img={Release} 
+             className1="release__title" 
+            className="release__artist"
+          />
+        )}
       </div>
     </div>
   );
 }
 
-
-export function ReleaseContent({artistNames}: ArtistNameProp) {
+export function ReleaseContent({artistNames, rContainer = "release__content", img, className1 = "release__title", className = "release__artist"}: ReleaseContentProps) {
   return (
-    <div className="release__content">
-      {Release.map((image, index) => (
+    <div className={rContainer}>
+      {img.map((image: string, index: number) => (
         <div key={index} className="release__item">
           <div className="image-container">
             <img src={image} alt={`release ${index + 1}`} />
@@ -53,8 +71,8 @@ export function ReleaseContent({artistNames}: ArtistNameProp) {
               <CirclePlay className="play-button" />
             </div>
           </div>
-          <p className="release__title">Release {index + 1}</p>
-          <p className="release__artist">{artistNames[index].name}</p>
+          <p className={className1}>Release {index + 1}</p>
+          <p className={className}>{artistNames[index].name}</p>
         </div>
       ))}
     </div>
