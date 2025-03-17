@@ -34,6 +34,7 @@ type ReleaseContentProps = {
   img: string[];
   className1?: string;
   className?: string;
+  releasetype?:string
 };
 
 export function NewRelease({rName, Content}: NewReleaseProp) {
@@ -53,6 +54,7 @@ export function NewRelease({rName, Content}: NewReleaseProp) {
             img={Release} 
              className1="release__title" 
             className="release__artist"
+            releasetype="Release"
           />
         )}
       </div>
@@ -60,7 +62,7 @@ export function NewRelease({rName, Content}: NewReleaseProp) {
   );
 }
 
-export function ReleaseContent({artistNames, rContainer = "release__content", img, className1 = "release__title", className = "release__artist"}: ReleaseContentProps) {
+export function ReleaseContent({artistNames, rContainer = "release__content", img, className1 = "release__title", className = "release__artist", releasetype}: ReleaseContentProps) {
   return (
     <div className={rContainer}>
       {img.map((image: string, index: number) => (
@@ -71,7 +73,7 @@ export function ReleaseContent({artistNames, rContainer = "release__content", im
               <CirclePlay className="play-button" />
             </div>
           </div>
-          <p className={className1}>Release {index + 1}</p>
+          <p className={className1}>{releasetype} {index + 1}</p>
           <p className={className}>{artistNames[index].name}</p>
         </div>
       ))}

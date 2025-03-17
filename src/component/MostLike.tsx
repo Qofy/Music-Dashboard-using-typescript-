@@ -44,6 +44,7 @@ export function MostLike() {
             img={Release1}
             className="most-liked-name"
             className1="releases"
+            
           />
         }
       />

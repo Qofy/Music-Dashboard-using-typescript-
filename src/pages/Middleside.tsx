@@ -1,3 +1,4 @@
+import { FreeDownload } from "../component/FreeDownload";
 import { MostLike } from "../component/MostLike";
 import { NewRelease } from "../component/NewRelease";
 import { Slider } from "../component/Slider";
@@ -11,6 +12,7 @@ export function MiddleSide() {
       <Slider/>
       <NewRelease rName="New Release"/>
       <MostLike/>
+      <FreeDownload/>
     </div>
   );
 }
