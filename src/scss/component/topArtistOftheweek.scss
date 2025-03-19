@@ -1,0 +1,31 @@
+@use "../abstract/variables.scss" as *;
+
+.artistoftheweek{
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  flex-direction: row;
+  color: $primary-color;
+  font-size: large;
+  font-weight: 600;
+  
+} 
+
+.top-artist-container {
+  border: 2px solid ;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.top-artist-container p{
+  color: $primary-color;
+
+  }
+
+.upcoming-artists p{
+  color: $secondary-pale-gold-color;
+}
+.artist-of-month p{
+  color: $seconadry-color;
+}
+
