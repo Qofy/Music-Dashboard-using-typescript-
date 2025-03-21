@@ -2,18 +2,22 @@ import { CirclePlus, Headphones, Heart, House, LayoutDashboard } from "lucide-re
 
 export const data1 = [
   {
+    id:1,
     img: House,
     txt: "Home"
   },
   {
+    id:2,
     img: LayoutDashboard,
     txt: "Browse"
   },
   {
+    id:3,
     img: Heart,
     txt: "Favorite"
   },
   {
+    id:4,
     img:Headphones,
     txt: "Library"
   },

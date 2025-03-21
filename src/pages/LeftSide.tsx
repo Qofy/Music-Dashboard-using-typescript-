@@ -4,7 +4,7 @@ import { LeftCm2 } from "../component/LeftCm2"
 import { Profile } from "../component/Profil"
 export function LeftSide(){
   return(
-    <div className="left-side">
+    <div className="left-side" style={{overflowY:"auto", display:"flex", flexDirection:"column"}}>
     <Logo/>
     <LeftCm1/>
     <LeftCm2/>

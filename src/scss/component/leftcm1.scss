@@ -3,6 +3,8 @@
 
 
 .leftcm{
+  display: flex;
+  flex-direction: column;
   &__item{
    @include display-with-small-space;
   }

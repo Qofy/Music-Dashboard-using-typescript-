@@ -58,6 +58,7 @@ export function NewRelease({rName, Content}: NewReleaseProp) {
           />
         )}
       </div>
+      
     </div>
   );
 }

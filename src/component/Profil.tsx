@@ -1,9 +1,15 @@
 import Profil from"../images/profile.jpg"
+type LoginProp ={
+  nameContext: string
+}
 export const Profile = () => {
   return(
     <section className="profile-container">
       <ProfileAndName/>
-      <Login/>
+      <div style={{display:"flex"}}>
+      <Login nameContext="Auto Login"/>
+      <Login nameContext="Switc Account"/>
+      </div>
     </section>
   )
 }
@@ -18,15 +24,12 @@ const ProfileAndName = () => {
   )
 }
 
-const Login = () => {
+
+const Login = ({nameContext}:LoginProp) => {
   return(
     <aside className="login-buttons">
-      <button style={{padding:".7rem 2rem", marginRight: ".5rem", color:"white", backgroundColor:"rgb(233, 63, 91)", fontSize:".8rem", fontWeight:600, borderRadius:"1rem"}}>
-        Auto Login
-      </button>
-
-      <button style={{padding:".7rem 2rem",  color:"white", backgroundColor:"rgb(233, 63, 91)", fontSize:".8rem", fontWeight:600, borderRadius:"1rem"}}>
-        Switch Account
+      <button style={{padding:".7rem", marginRight: ".5rem", color:"white", backgroundColor:"rgb(233, 63, 91)", fontSize:".7rem", fontWeight:600, borderRadius:"1rem", width:"9rem", border:"none"}}>
+        {nameContext}
       </button>
     </aside>
   )
