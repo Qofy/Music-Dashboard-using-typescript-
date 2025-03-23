@@ -7,6 +7,7 @@
   flex-direction: column;
   &__item{
    @include display-with-small-space;
+   padding-left: .5rem;
   }
   &__item:hover{
     // padding: .5rem 3rem;

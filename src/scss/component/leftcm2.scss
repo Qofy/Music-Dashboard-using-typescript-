@@ -7,9 +7,11 @@
   &__item{
     @include display-with-large-space; 
     background-color: rgb(67, 63, 63);
-
   }
 
+  &__item, .leftcm2__playlist-item{
+    padding-left: .3rem;
+  }  
   &__item:hover{
     // padding: .5rem 3rem;
     background-color: rgb(111, 106, 106);

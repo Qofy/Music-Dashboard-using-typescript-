@@ -6,9 +6,7 @@
 
 
 
-@use "./scss/context/leftcontext.scss" as *;
 @use "./scss/context/middlecontext.scss" as *;
-@use "./scss/context/rightcontext.scss" as *;
 
 
 @use "./scss/component/logo.scss" as *;
@@ -22,6 +20,8 @@
 
 @use "./scss/pages/middle.scss" as *;
 @use "./scss/pages/right.scss" as *;
+@use "./scss/pages/left.scss" as *;
+
 
 
 
@@ -38,10 +38,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 body{
-  width: 100%;
+  // width: 100%; 
   min-height: 100dvh; 
-  /* align-items: center; */
-  /* justify-content: space-between; */
   color: white!important;
   background-color: #000;
 }
