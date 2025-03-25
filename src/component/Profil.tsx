@@ -4,7 +4,7 @@ type LoginProp ={
 }
 export const Profile = () => {
   return(
-    <section className="profile-container">
+    <section className="profile-container" style={{marginBottom:"5rem"}}>
       <ProfileAndName/>
       <div style={{display:"flex"}}>
       <Login nameContext="Auto Login"/>
