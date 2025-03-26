@@ -1,25 +1,36 @@
 import { CirclePlus, Headphones, Heart, House, LayoutDashboard } from "lucide-react"
+export interface LeftCmItem{
+  id:number;
+  img:React.ComponentType;
+  txt:string;
+  path?:string
+}
 
 export const data1 = [
   {
     id:1,
     img: House,
-    txt: "Home"
+    txt: "Home",
+    path: "/"
   },
   {
     id:2,
     img: LayoutDashboard,
-    txt: "Browse"
+    txt: "Browse",
+    path:"browse"
   },
   {
     id:3,
     img: Heart,
-    txt: "Favorite"
+    txt: "Favorite",
+    path:"favorite"
+
   },
   {
     id:4,
     img:Headphones,
-    txt: "Library"
+    txt: "Library",
+    path:"library"
   },
 
 ]
