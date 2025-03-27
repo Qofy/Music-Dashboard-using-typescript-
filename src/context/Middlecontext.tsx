@@ -4,7 +4,7 @@ import "../scss/context/middlecontext.scss"
 
 export function MiddleContext(){
   return(
-    <div className="middle-context">
+    <div className="middle-context" style={{width:"100dvh"}}>
       <MiddleSide/>
     </div>
   )

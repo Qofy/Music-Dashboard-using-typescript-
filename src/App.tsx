@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Layout } from "./component/Layout";
+import { Home } from "./pages/Home";
 import { MiddleContext } from "./context/Middlecontext";
 import { Browse } from "./pages/Browse";
 import { Favorite } from "./pages/Favorite";
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="main">
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Home />}>
           <Route index element={<MiddleContext />} />
           <Route path="browse" element={<Browse />} />
           <Route path="favorite" element={<Favorite />} />
