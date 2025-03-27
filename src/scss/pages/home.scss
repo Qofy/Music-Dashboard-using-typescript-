@@ -1,12 +1,10 @@
 .home {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; 
-  // width: 95%;
-  height: inherit;
-  margin: 10px auto;
+  justify-content: space-between;
+  height: 100vh;
+  margin: 0 auto;
   position: relative;
-  
+  // overflow: hidden;
 }
-
 
