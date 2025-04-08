@@ -23,7 +23,7 @@ const artistName = [
 
 type NewReleaseProp = {
   rName: string;
-  Content?: ReactNode; // Add this to accept custom content
+  Content?: ReactNode; 
 };
 
 type ReleaseContentProps = {
