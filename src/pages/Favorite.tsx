@@ -1,10 +1,23 @@
-import { useNavigate } from "react-router-dom"
+import { favoriteList } from "../data/favourite"
+import "../scss/pages/favorite.scss"
+
 export function Favorite (){
-  const navigate = useNavigate()
   return(
-    <div>
-      favorite
-      <button onClick={() => navigate(-1)}>Go Back</button>
-    </div>
+      <section className="favorite-section">
+        {favoriteList.map((data)=>{
+          return(
+            <div key={data.id} className="favorite-item">
+              <div>{data.name}</div>
+              <div>{data.songName}</div>
+              <div className="favorite-btn">
+                {data.controlButtons.map((Button, index) => (
+                  <Button key={index} />
+                ))}
+                <div>{data.plyLength}</div>
+              </div>
+            </div>
+          )
+        })}
+      </section>
   )
 }
