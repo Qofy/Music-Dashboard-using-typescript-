@@ -4,9 +4,8 @@ const lM1 = "https://source.boomplaymusic.com/group10/M00/08/20/fed1f839f0e34e1f
   const lM3 = "https://source.boomplaymusic.com/group10/M00/09/18/bffccc11ff3b43b49e2d142547257aceH930W930_464_464.webp";
   const lM4 = "https://source.boomplaymusic.com/group10/M00/01/05/02f3f356d9754b1c9e17a97839669bd2_464_464.webp";
   const lM5 = "https://source.boomplaymusic.com/group10/M00/03/04/5a72fb191a114e58a55af75dc69db882_464_464.webp";
-  const lM6 = "https://source.boomplaymusic.com/group10/M00/21/88/b4c6c945a4c54ae68d4b6140f610d37e_464_464.webp";
 
-  export const latestMusicImg= [lM1,lM2,lM3,lM4,lM5,lM6]
+  export const latestMusicImg= [lM1,lM2,lM3,lM4,lM5,]
 
  export const lMartist = [
   {name:"Kuame Eugene"},
@@ -14,6 +13,6 @@ const lM1 = "https://source.boomplaymusic.com/group10/M00/08/20/fed1f839f0e34e1f
   {name:"Yhaw Hero"},
   {name:"Kwesi Amewuga Ft Medikal"},
   {name:"Kwesi Arthur"},
-  {name:"StoneBwoy"},
+  // {name:"StoneBwoy"},
   // {name:"Shatta Wale"},
 ]
