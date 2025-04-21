@@ -9,6 +9,7 @@ import { NotFound } from "./pages/NotFound";
 function App() {
   return (
     <div className="main">
+      
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<MiddleContext />} />

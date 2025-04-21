@@ -6,8 +6,9 @@
   overflow-y: auto; 
   overflow-x: hidden; 
   position: relative;
-  padding: 0 15px;
+  // padding: 0 15px;
   box-sizing: border-box;
+  // align-items: center;
 
   &::-webkit-scrollbar {
     width: 8px; 
@@ -29,16 +30,33 @@
   .favorite-item{
     width: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    // flex-direction: row;
+     justify-content: space-between;
     align-items: center;
   margin-bottom: 2rem;
 
-    .favorite-btn{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 1rem;
-    }
+  .favorite-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .txt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+  }
+  }
+ 
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  gap: 26rem;
+
+  .time{
+    margin-left: 2.8rem;
   }
 }
