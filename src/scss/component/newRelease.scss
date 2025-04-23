@@ -12,13 +12,15 @@
   border-radius: 8px;
   // background-color: $background-color;
 
+
+
   &__header {
     @include flex(row, space-between, center);
     margin-bottom: 20px;
     
     h3 {
       @include flex(row, flex-start, center);
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       color: $white;
       gap: 10px;
       
@@ -31,6 +33,7 @@
       cursor: pointer;
       color: $primary-color1;
       font-weight: 500;
+      font-size: larger;
       
       &:hover {
         text-decoration: underline;
@@ -57,12 +60,21 @@
       background-color: rgba(0, 0, 0, 0.2);
       border-radius: 10px;
     }
+   
+
   }
+
+
   
   &__item {
     min-width: 180px;
     max-width: 180px;
     
+    .release__title, .release__artist{
+      font-size: large;
+    }
+    
+
     .image-container {
       position: relative;
       width: 100%;

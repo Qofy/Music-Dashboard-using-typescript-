@@ -13,13 +13,38 @@ export const Profile = () => {
     </section>
   )
 }
+const pflInfoStyle={
+  display:"flex", 
+  gap:"1rem", 
+  marginBottom:"2rem", 
+  marginTop:"2.5rem",
+  alignItems:"center"
+}
+const lgBtnStyle={padding:".7rem", 
+  marginRight: ".5rem", 
+  color:"white", 
+  backgroundColor:"rgb(233, 63, 91)", 
+  fontSize:"1.3rem", 
+  fontWeight:600, 
+  borderRadius:"1rem", 
+  width:"14rem", 
+  border:"none"}
 
+const pimgStyle= {
+  width:80,
+  height:80,
+  borderRadius:50,
+  display:"flex",
+}
+
+const pStyle = {
+fontSize: "2.3rem",
+}
 const ProfileAndName = () => {
   return(
-    <article className="profile-info"
-    style={{display:"flex", gap:"1rem", marginBottom:"2rem", marginTop:"2.5rem"}}>
-      <img className="p-image" style={{width:60,height:60, borderRadius:50}} src={Profil} alt="profile" />
-      <p>@safo</p>
+    <article className="profile-info" style={pflInfoStyle}>
+      <img className="p-image" style={pimgStyle} src={Profil} alt="profile" />
+      <p style={pStyle}>@safo</p>
     </article>
   )
 }
@@ -28,7 +53,7 @@ const ProfileAndName = () => {
 const Login = ({nameContext}:LoginProp) => {
   return(
     <aside className="login-buttons">
-      <button style={{padding:".7rem", marginRight: ".5rem", color:"white", backgroundColor:"rgb(233, 63, 91)", fontSize:".7rem", fontWeight:600, borderRadius:"1rem", width:"9rem", border:"none"}}>
+      <button style={lgBtnStyle}>
         {nameContext}
       </button>
     </aside>

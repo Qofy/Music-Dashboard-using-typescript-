@@ -98,7 +98,7 @@
     &-bar{
       width: 60%;
       height: 2.3rem;
-      padding-left: 2.5rem;
+      padding: 2.5rem 2.5rem 2.5rem 3.5rem;
       position: relative;
       border: none;
       border-radius: 1rem;
@@ -108,7 +108,7 @@
     &-icon{
       position: absolute;
       left: 21%;
-      top: 5%;
+      top: 5.8%;
     }
   }
 }

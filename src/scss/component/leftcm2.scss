@@ -7,10 +7,14 @@
   &__item{
     @include display-with-large-space; 
     background-color: rgb(67, 63, 63);
+    margin-bottom: 1.5rem;
+    font-size: large;
   }
 
   &__item, .leftcm2__playlist-item{
     padding-left: .3rem;
+    margin-bottom: 1.5rem;
+
   }  
   &__item:hover{
     // padding: .5rem 3rem;
