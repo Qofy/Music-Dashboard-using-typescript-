@@ -1,0 +1,40 @@
+.library-container{
+  width: 100dvh;
+  height: 100dvh;
+  overflow-y: auto; 
+  overflow-x: hidden; 
+  position: relative;
+  background-color: aqua;
+  
+
+  &::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-radius: 4px; 
+  }
+  
+  & > * {
+    max-width: 100%;
+  }
+
+  padding: 0 15px;
+  
+  box-sizing: border-box;
+
+ &__head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  &__btn{
+
+  }
+}
+}

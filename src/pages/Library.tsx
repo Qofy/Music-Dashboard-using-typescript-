@@ -1,10 +1,17 @@
-import { useNavigate } from "react-router-dom"
+import "../scss/pages/library.scss"
+
 export function Library (){
-  const navigate = useNavigate()
   return(
-    <div>
-      library
-      <button onClick={() => navigate(-1)}>Go Back</button>
+    <div className="library-container">
+      <h2>Library</h2>
+      <div className="library__head">
+        <div className="library__btns">
+        <button></button>
+        <button></button>
+        <button></button>
+        </div>
+        <p className="sort">Sort by Name</p>
+      </div>
     </div>
   )
 }

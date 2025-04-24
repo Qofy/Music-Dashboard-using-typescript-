@@ -9,6 +9,7 @@
   // padding: 0 15px;
   box-sizing: border-box;
   // align-items: center;
+  font-size: large;
 
   &::-webkit-scrollbar {
     width: 8px; 
@@ -54,9 +55,11 @@
 .header{
   display: flex;
   flex-direction: row;
-  gap: 26rem;
+  gap:40rem;
+  font-size: large;
+  margin-bottom: 1.4rem;
 
   .time{
-    margin-left: 2.8rem;
+    margin-left: 5.5rem;
   }
 }

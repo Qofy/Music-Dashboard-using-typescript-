@@ -7,7 +7,8 @@ import { Play,SquarePlus,Download } from "lucide-react";
 // }
 const styleBtnsContainer = {
 display: "flex",
-gap: "2rem"
+gap: "2rem",
+marginBottom: "1.2rem",
 }
 const styleBtns1= {
  padding:".5rem 3rem",
