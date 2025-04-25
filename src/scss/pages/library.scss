@@ -4,7 +4,6 @@
   overflow-y: auto; 
   overflow-x: hidden; 
   position: relative;
-  background-color: aqua;
   
 
   &::-webkit-scrollbar {
@@ -24,17 +23,20 @@
     max-width: 100%;
   }
 
-  padding: 0 15px;
-  
-  box-sizing: border-box;
+}
 
- &__head{
+.library-name{
+  font-size: 3rem;
+}
+
+
+
+.library__p{
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  &__btn{
+  gap: 3rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(233, 63, 91);
+}
 
-  }
-}
-}
+
