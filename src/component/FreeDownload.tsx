@@ -23,9 +23,12 @@ const ml7= "https://source.boomplaymusic.com/group10/M00/11/06/dee2c936b3104e18b
 
 const Release1=[ml1,ml2, ml3,ml4,ml5,ml6,ml7]
 
+const fDownStyle= {
+  marginBottom: "7rem"
+}
 export const FreeDownload = () => {
   return(
-    <div>
+    <div style={fDownStyle}>
       <NewRelease rName="DownLoad For Free"
       Content={
                 <ReleaseContent 

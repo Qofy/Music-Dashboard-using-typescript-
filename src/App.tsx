@@ -3,7 +3,10 @@ import { Home } from "./pages/Home";
 import { MiddleContext } from "./context/Middlecontext";
 import { Browse } from "./pages/Browse";
 import { Favorite } from "./pages/Favorite";
-import { Library, Artist, Album, Songs } from "./pages/Library";
+import { Library} from "./pages/Library";
+import { Artist } from "./component/Artist";
+import { Album } from "./component/Album";
+import { Songs } from "./component/Songs";
 import { NotFound } from "./pages/NotFound";
 
 function App() {
