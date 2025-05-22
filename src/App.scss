@@ -46,10 +46,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 body{
-  // width: 100%; 
-  min-height: 100dvh; 
+  width: 95%; 
+  // min-height: 100dvh; 
   color: white!important;
   background-color: #000;
+  margin: 0 auto;
 }
 
 *{

@@ -1,12 +1,6 @@
 import "../scss/pages/library.scss";
 import { NavLink, Outlet } from "react-router-dom";
 
-
-
-
-
-
-
 const libraryHeadStyl = {
   display: "flex",
   justifyContent: "space-between",
@@ -50,7 +44,7 @@ export function Library() {
           <p className="sort">Sort by Name</p>
         </div>
         
-        {/* This is where nested routes will render */}
+        
         <div className="library-content">
           <Outlet />
         </div>

@@ -1,4 +1,4 @@
-import logo from "/public/music.jpeg"
+import logo from "../images/african-music-logo.webp"
 export const Logo = () => {
   return(
     <div className="logo-container" style={{marginTop:"3rem", marginBottom:"1.5rem"}}>

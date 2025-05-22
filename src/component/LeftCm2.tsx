@@ -8,9 +8,9 @@ export const LeftCm2 = () => {
           return(
             <div key={key} className="leftcm2__item">
               <p className="leftcm2__text">{data.txt}</p>
-              <div className="leftcm2__image">
+              {/* <div className="leftcm2__image"> */}
                 <data.img/>
-              </div>
+              {/* </div> */}
             </div>
           )
         }else{

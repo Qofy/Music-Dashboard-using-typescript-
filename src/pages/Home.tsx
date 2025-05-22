@@ -1,6 +1,5 @@
 import { LeftContext } from "../context/LeftContext"
 // import { MiddleContext } from "../context/Middlecontext"
-import { RightContext } from "../context/RightContex"
 import { Outlet } from "react-router-dom";
 import "../scss/pages/home.scss"
 import { Footer } from "../component/Footer";
@@ -17,10 +16,10 @@ export function Layout() {
   return (
     <>
       <LeftContext />
-      <div className="middle-container">
+      {/* <div className="middle-container" style={{backgroundColor:"red", width:"100%", height:"70%"}}>
         <Outlet />
-      </div>
-      <RightContext />
+      </div> */}
+      <Outlet/>
       <Footer/>
     </>
   );

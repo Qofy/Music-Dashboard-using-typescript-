@@ -46,7 +46,7 @@ export function NewRelease({rName, Content}: NewReleaseProp) {
           <h3>
             {rName} <CirclePlay className="play-icon" />
           </h3>
-          <p>See more</p>
+          <p style={{cursor:"pointer"}}>See more</p>
         </div>
         {Content || (
           <ReleaseContent 

@@ -1,9 +1,7 @@
 .home {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100vh;
+  flex: 1;
+  gap: 12rem;
   margin: 0 auto;
-  position: relative;
-  // overflow: hidden;
 }
+

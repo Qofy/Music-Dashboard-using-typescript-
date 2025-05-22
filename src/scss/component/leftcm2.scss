@@ -9,6 +9,9 @@
     background-color: rgb(67, 63, 63);
     margin-bottom: 1.5rem;
     font-size: large;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   padding-left: .8rem !important;
   }
 
   &__item, .leftcm2__playlist-item{
@@ -20,6 +23,7 @@
     // padding: .5rem 3rem;
     background-color: rgb(111, 106, 106);
     border-radius: .5rem;
+    // flex-direction: row;
   }
 
   &__playlist-item:hover{
