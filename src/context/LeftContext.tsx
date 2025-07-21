@@ -2,7 +2,7 @@ import { LeftSide } from "../pages/LeftSide";
 
 export function LeftContext(){
   return(
-    <div className="left-context" style={{ backgroundColor:"#272727"}}>
+    <div className="left-context">
       <LeftSide/>
     </div>
   )

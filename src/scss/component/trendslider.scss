@@ -1,20 +1,47 @@
 @use "../abstract/variables.scss" as *;
 @use "../abstract/mixin.scss" as *;
-
+@use "../abstract/breakpoints.scss" as *;
 
 .middle-side {
   width: 100%;
-  // height: 50%;
   padding: 20px;
-  margin-top: 4.5rem;
+  margin-top: 2rem;
+  
+  @include tablet {
+    padding: 15px;
+    margin-top: 1rem;
+  }
+  
+  @include mobile {
+    padding: 10px;
+    margin-top: 0.5rem;
+  }
   
   .slider-container {
     position: relative;
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
     height: $slider-height;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 12px $shadow-color;
+    
+    @include desktop-small {
+      height: 600px;
+    }
+    
+    @include tablet {
+      height: 450px;
+      width: 100%;
+    }
+    
+    @include mobile {
+      height: 300px;
+    }
+    
+    @include mobile-small {
+      height: 250px;
+    }
     
     .slider {
       position: relative;
@@ -30,8 +57,7 @@
         img {
           width: 100%;
           height: 100%;
-          // object-fit: cover;
-          // background-size: cover;
+          object-fit: cover;
         }
         
         &.active {
@@ -52,16 +78,32 @@
       transition: background-color 0.3s;
       z-index: 2;
       
+      @include mobile {
+        @include size(32px);
+      }
+      
+      @include mobile-small {
+        @include size(28px);
+      }
+      
       &:hover {
         background-color: $white-hover;
       }
       
       &.prev {
         left: 20px;
+        
+        @include mobile {
+          left: 10px;
+        }
       }
       
       &.next {
         right: 20px;
+        
+        @include mobile {
+          right: 10px;
+        }
       }
     }
     
@@ -95,22 +137,66 @@
     justify-content: center;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    // position: relative;
+    position: relative;
+
+    @include mobile {
+      margin-bottom: 0.8rem;
+    }
 
     &-bar{
       width: 60%;
+      max-width: 600px;
       height: 2.3rem;
       padding: 2.5rem 2.5rem 2.5rem 3.5rem;
       position: relative;
       border: none;
       border-radius: 1rem;
-      border-style: none;
+      font-size: 1.4rem;
+      box-sizing: border-box;
+      
+      @include tablet {
+        width: 70%;
+        max-width: 500px;
+        padding: 2rem 2rem 2rem 3rem;
+        font-size: 1.3rem;
+      }
+      
+      @include mobile {
+        width: 85%;
+        max-width: 400px;
+        padding: 1.8rem 1.5rem 1.8rem 2.8rem;
+        font-size: 1.2rem;
+      }
+      
+      @include mobile-small {
+        width: 90%;
+        max-width: 300px;
+        padding: 1.5rem 1rem 1.5rem 2.5rem;
+        font-size: 1.1rem;
+      }
     }
 
     &-icon{
       position: absolute;
       left: 20.7%;
       top: 3.2%;
+      
+      @include tablet {
+        left: 18%;
+      }
+      
+      @include mobile {
+        left: 12%;
+        top: 2.8%;
+        width: 20px;
+        height: 20px;
+      }
+      
+      @include mobile-small {
+        left: 8%;
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 }

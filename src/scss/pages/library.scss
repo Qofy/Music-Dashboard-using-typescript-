@@ -1,5 +1,6 @@
 @use "../abstract/mixin.scss" as *;
 @use "../abstract/variables.scss" as *;
+@use "sass:color";
 .library-container{
   width: 100dvh;
   height: 100dvh;
@@ -43,7 +44,7 @@
   color: $white;
   font-weight: 600;
   &:hover{
-    color: lighten($primary-color1, 10%)
+    color: color.scale($primary-color1, $lightness: 23.8317757009%);
   }
   &.active {
     font-weight: bold;

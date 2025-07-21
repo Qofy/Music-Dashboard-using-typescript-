@@ -1,0 +1,70 @@
+// Breakpoints for responsive design
+$mobile-small: 320px;
+$mobile: 480px;
+$tablet: 768px;
+$desktop-small: 1024px;
+$desktop: 1200px;
+$desktop-large: 1440px;
+$desktop-xl: 1920px;
+
+// Media query mixins
+@mixin mobile-small {
+  @media (max-width: #{$mobile-small}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop-small {
+  @media (max-width: #{$desktop-small}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (min-width: #{$desktop-large}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media (min-width: #{$desktop-xl}) {
+    @content;
+  }
+}
+
+// Range mixins
+@mixin mobile-only {
+  @media (max-width: #{$tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop-small - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$desktop-small}) {
+    @content;
+  }
+}

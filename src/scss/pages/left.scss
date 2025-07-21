@@ -1,13 +1,34 @@
+@use "../abstract/breakpoints.scss" as *;
+
 .left-side {
   padding: 1rem;
   height: 97vh;
- 
   overflow-y: auto;
-  // background-color: #fafafa;
+  /* background-color: #fafafa; */
   border-right: 1px solid #eee;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  
+  @include tablet {
+    height: auto;
+    min-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding: 1rem;
+  }
+  
+  @include mobile {
+    padding: 0.5rem;
+    min-height: auto;
+  }
   
   &::-webkit-scrollbar {
     width: 6px;
+    
+    @include mobile {
+      width: 4px;
+    }
   }
   
   &::-webkit-scrollbar-track {

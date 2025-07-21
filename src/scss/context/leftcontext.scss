@@ -1,0 +1,28 @@
+@use "../abstract/breakpoints.scss" as *;
+
+.left-context {
+  background-color: #272727;
+  width: 280px;
+  flex-shrink: 0;
+  min-width: 280px;
+  max-width: 280px;
+  
+  @include desktop {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
+  
+  @include tablet {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    order: -1;
+  }
+  
+  @include mobile {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}

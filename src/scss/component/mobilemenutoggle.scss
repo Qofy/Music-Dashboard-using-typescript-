@@ -1,0 +1,70 @@
+@use "../abstract/breakpoints.scss" as *;
+
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  @include tablet {
+    display: block;
+  }
+}
+
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  
+  @include tablet {
+    display: block;
+  }
+  
+  &.open {
+    display: block;
+  }
+}
+
+@include tablet {
+  .left-context {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    
+    &.open {
+      left: 0;
+    }
+  }
+}
+
+@include mobile {
+  .left-context {
+    width: 250px;
+  }
+}

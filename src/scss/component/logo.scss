@@ -1,11 +1,50 @@
+@use "../abstract/breakpoints.scss" as *;
+
 .logo-container{
   display: flex;
   gap: 1rem;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  
+  @include mobile {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    gap: 0.8rem;
+  }
+  
+  img {
+    width: 60px;
+    height: auto;
+    
+    @include mobile {
+      width: 50px;
+    }
+    
+    @include mobile-small {
+      width: 40px;
+    }
+  }
 
   &__text{
-    font-size: x-large;
+    font-size: 2.4rem;
     font-weight: 700;
-    font-family:fantasy;
-    letter-spacing: .5rem;
+    font-family: fantasy;
+    letter-spacing: 0.5rem;
+    
+    @include tablet {
+      font-size: 2.2rem;
+      letter-spacing: 0.3rem;
+    }
+    
+    @include mobile {
+      font-size: 1.8rem;
+      letter-spacing: 0.2rem;
+    }
+    
+    @include mobile-small {
+      font-size: 1.6rem;
+      letter-spacing: 0.1rem;
+    }
   }
 }

@@ -1,25 +1,30 @@
 import { LeftContext } from "../context/LeftContext"
-// import { MiddleContext } from "../context/Middlecontext"
 import { Outlet } from "react-router-dom";
 import "../scss/pages/home.scss"
 import { Footer } from "../component/Footer";
+import { MobileMenuToggle, useMobileMenu } from "../component/MobileMenuToggle";
 
 export function Home(){
   return(
     <div className="home">
-    <Layout/>
+      <Layout/>
     </div>
   )
 }
 
 export function Layout() {
+  const { isOpen, toggle, close } = useMobileMenu();
+  
   return (
     <>
-      <LeftContext />
-      {/* <div className="middle-container" style={{backgroundColor:"red", width:"100%", height:"70%"}}>
-        <Outlet />
-      </div> */}
-      <Outlet/>
+      <MobileMenuToggle isOpen={isOpen} onToggle={toggle} />
+      {isOpen && <div className="mobile-menu-overlay" onClick={close} />}
+      <div className={`left-context-wrapper ${isOpen ? 'open' : ''}`}>
+        <LeftContext />
+      </div>
+      <main className="main-content">
+        <Outlet/>
+      </main>
       <Footer/>
     </>
   );
