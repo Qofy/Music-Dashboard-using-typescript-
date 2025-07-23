@@ -27,9 +27,25 @@ export const signInWithGoogle = async (): Promise<User | null> => {
     return result.user;
   } catch (error: any) {
     console.error("Error signing in with Google:", error);
+    
+    // Handle specific error cases
     if (error.code === 'auth/popup-closed-by-user') {
       return null;
     }
+    
+    if (error.code === 'auth/unauthorized-domain') {
+      console.error('Domain not authorized. Please add this domain to Firebase Console.');
+      throw new Error('This domain is not authorized for authentication. Please contact support.');
+    }
+    
+    if (error.code === 'auth/operation-not-allowed') {
+      throw new Error('Google sign-in is not enabled. Please contact support.');
+    }
+    
+    if (error.code === 'auth/popup-blocked') {
+      throw new Error('Popup was blocked by browser. Please allow popups and try again.');
+    }
+    
     throw error;
   }
 };
