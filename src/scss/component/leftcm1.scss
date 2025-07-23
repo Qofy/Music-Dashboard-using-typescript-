@@ -12,9 +12,9 @@
    margin-bottom: 1.5rem;
    color: $white;
    text-decoration: none;
+
   }
   &__item:hover{
-    // padding: .5rem 3rem;
     background-color: $primary-color1;
     border-radius: .5rem;
   }
@@ -24,6 +24,11 @@
     font-size: large;
    text-decoration: none;
    color: $white;
+
+   &__text:hover{
+    background-color: $primary-color1;
+    border-radius: .5rem;
+  }
   }
 
   

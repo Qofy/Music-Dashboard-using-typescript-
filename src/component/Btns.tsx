@@ -1,10 +1,4 @@
 import { Play,SquarePlus,Download } from "lucide-react";
-
-// interface BtnsProps {
-//   Play?: React.ComponentType;
-//   Download?: React.ComponentType;
-//   SquarePlus?: React.ComponentType;
-// }
 const styleBtnsContainer = {
 display: "flex",
 gap: "2rem",

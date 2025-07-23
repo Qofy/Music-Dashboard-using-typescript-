@@ -1,7 +1,6 @@
 @use "../abstract/variables.scss" as *;
 @use "../abstract/breakpoints.scss" as *;
 
-// Footer styles
 .player-footer {
   position: fixed;
   bottom: 0;
@@ -23,14 +22,15 @@
   @include tablet {
     height: 70px;
     padding: 0 15px;
+    
   }
   
   @include mobile {
     height: 65px;
     padding: 0 10px;
+   
   }
   
-  // Artwork section
   &__artwork {
     display: flex;
     align-items: center;
@@ -67,7 +67,6 @@
     }
   }
   
-  // Playback controls
   &__controls {
     display: flex;
     align-items: center;
@@ -101,11 +100,25 @@
     }
   }
   
-  // Action buttons
   &__actions {
     display: flex;
     align-items: center;
     gap: 12px;
+
+     @include tablet {
+    height: 70px;
+    padding: 0 15px;
+    display: none;
+    visibility: collapse;
+  }
+  
+  @include mobile {
+    height: 65px;
+    padding: 0 10px;
+    display: none;
+    visibility: collapse;
+   
+  }
     
     .player-footer__action-btn {
       background: none;
@@ -121,9 +134,8 @@
         background-color: rgba(255, 255, 255, 0.1);
       }
       
-      // Active state for buttons like repeat or favorite
       &.active {
-        color: #1DB954; // Spotify green color
+        color: #1DB954;
       }
       
       .player-footer__icon {
@@ -133,7 +145,6 @@
     }
   }
   
-  // Progress bar
   &__progress {
     position: absolute;
     top: 0;

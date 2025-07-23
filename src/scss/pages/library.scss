@@ -116,9 +116,7 @@
   font-size: 14px;
 }
 
-// Previous styles remain the same
 
-// Album grid styling
 .albums-container {
   width: 100%;
 }
@@ -322,7 +320,7 @@
   text-align: right;
 }
 
-// Responsive adjustments
+
 @media (max-width: 768px) {
   .songs-header, .song-row {
     grid-template-columns: 40px 3fr 80px;

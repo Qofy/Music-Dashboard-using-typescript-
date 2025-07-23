@@ -1,61 +1,125 @@
-import Profil from"../images/profile.jpg"
-type LoginProp ={
-  nameContext: string
-}
+import { useState } from 'react';
+import { LogOut, Settings, User } from 'lucide-react';
+import { User as FirebaseUser } from 'firebase/auth';
+import { useAuth } from '../auth/AuthContext';
+import { signOutUser } from '../auth/firebase';
+import { AuthModal } from './Auth/AuthModal';
+import DefaultProfileImg from '../images/profile.jpg';
+import '../scss/component/profile.scss';
+
 export const Profile = () => {
-  return(
-    <section className="profile-container" style={{marginBottom:"5rem"}}>
-      <ProfileAndName/>
-      <div style={{display:"flex"}}>
-      <Login nameContext="Auto Login"/>
-      <Login nameContext="Switc Account"/>
-      </div>
+  const { user, loading } = useAuth();
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [signOutLoading, setSignOutLoading] = useState(false);
+
+  const handleSignOut = async () => {
+    setSignOutLoading(true);
+    await signOutUser();
+    setSignOutLoading(false);
+  };
+
+  const handleSignIn = () => {
+    setShowAuthModal(true);
+  };
+
+  if (loading) {
+    return (
+      <section className="profile-container">
+        <div className="profile-loading">
+          <div className="profile-skeleton"></div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="profile-container">
+      {user ? (
+        <AuthenticatedProfile 
+          user={user} 
+          onSignOut={handleSignOut}
+          signOutLoading={signOutLoading}
+        />
+      ) : (
+        <UnauthenticatedProfile onSignIn={handleSignIn} />
+      )}
+      
+      <AuthModal 
+        isOpen={showAuthModal} 
+        onClose={() => setShowAuthModal(false)} 
+      />
     </section>
-  )
-}
-const pflInfoStyle={
-  display:"flex", 
-  gap:"1rem", 
-  marginBottom:"2rem", 
-  marginTop:"2.5rem",
-  alignItems:"center"
-}
-const lgBtnStyle={padding:".7rem", 
-  marginRight: ".5rem", 
-  color:"white", 
-  backgroundColor:"rgb(233, 63, 91)", 
-  fontSize:"1.3rem", 
-  fontWeight:600, 
-  borderRadius:"1rem", 
-  width:"14rem", 
-  border:"none"}
+  );
+};
 
-const pimgStyle= {
-  width:80,
-  height:80,
-  borderRadius:50,
-  display:"flex",
+interface AuthenticatedProfileProps {
+  user: FirebaseUser;
+  onSignOut: () => void;
+  signOutLoading: boolean;
 }
 
-const pStyle = {
-fontSize: "2.3rem",
-}
-const ProfileAndName = () => {
-  return(
-    <article className="profile-info" style={pflInfoStyle}>
-      <img className="p-image" style={pimgStyle} src={Profil} alt="profile" />
-      <p style={pStyle}>@safo</p>
-    </article>
-  )
+const AuthenticatedProfile: React.FC<AuthenticatedProfileProps> = ({ 
+  user, 
+  onSignOut, 
+  signOutLoading 
+}) => {
+  return (
+    <>
+      <div className="profile-info">
+        <img 
+          className="profile-image" 
+          src={user.photoURL || DefaultProfileImg} 
+          alt="Profile" 
+        />
+        <div className="profile-details">
+          <h3 className="profile-name">{user.displayName || 'Music Lover'}</h3>
+          <p className="profile-email">{user.email}</p>
+        </div>
+      </div>
+      
+      <div className="profile-actions">
+        <button className="profile-btn profile-btn--secondary">
+          <Settings size={18} />
+          Settings
+        </button>
+        <button 
+          className="profile-btn profile-btn--danger"
+          onClick={onSignOut}
+          disabled={signOutLoading}
+        >
+          <LogOut size={18} />
+          {signOutLoading ? 'Signing out...' : 'Sign Out'}
+        </button>
+      </div>
+    </>
+  );
+};
+
+interface UnauthenticatedProfileProps {
+  onSignIn: () => void;
 }
 
-
-const Login = ({nameContext}:LoginProp) => {
-  return(
-    <aside className="login-buttons">
-      <button style={lgBtnStyle}>
-        {nameContext}
-      </button>
-    </aside>
-  )
-}
+const UnauthenticatedProfile: React.FC<UnauthenticatedProfileProps> = ({ onSignIn }) => {
+  return (
+    <>
+      <div className="profile-info">
+        <div className="profile-placeholder">
+          <User size={40} />
+        </div>
+        <div className="profile-details">
+          <h3 className="profile-name">Welcome</h3>
+          <p className="profile-email">Sign in to access your music</p>
+        </div>
+      </div>
+      
+      <div className="profile-actions">
+        <button 
+          className="profile-btn profile-btn--primary"
+          onClick={onSignIn}
+        >
+          Sign In
+        </button>
+      </div>
+    </>
+  );
+};

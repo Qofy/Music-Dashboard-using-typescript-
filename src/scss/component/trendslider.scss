@@ -141,6 +141,7 @@
 
     @include mobile {
       margin-bottom: 0.8rem;
+       
     }
 
     &-bar{
@@ -179,10 +180,12 @@
     &-icon{
       position: absolute;
       left: 20.7%;
-      top: 3.2%;
+      top:25%;
       
       @include tablet {
         left: 18%;
+        display: none;
+      visibility: collapse;
       }
       
       @include mobile {
@@ -190,12 +193,17 @@
         top: 2.8%;
         width: 20px;
         height: 20px;
+        display: none;
+      visibility: collapse;
       }
       
       @include mobile-small {
         left: 8%;
         width: 18px;
         height: 18px;
+        display: none;
+      visibility: collapse;
+
       }
     }
   }

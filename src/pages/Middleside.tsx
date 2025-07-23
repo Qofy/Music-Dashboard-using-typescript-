@@ -3,7 +3,7 @@ import { MostLike } from "../component/MostLike";
 import { NewRelease } from "../component/NewRelease";
 import { Slider } from "../component/Slider";
 import "../scss/pages/middle.scss"
-// import { Footer } from "../component/Footer";
+
 
 
 export function MiddleSide() {
@@ -14,7 +14,7 @@ export function MiddleSide() {
       <NewRelease rName="New Release"/>
       <MostLike/>
       <FreeDownload/>
-      {/* <Footer/> */}
+
     </div>
   );
 }

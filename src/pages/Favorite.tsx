@@ -1,6 +1,4 @@
-// import { favoriteList } from "../data/favourite"
 import "../scss/pages/favorite.scss";
-// import { Head2 } from "../component/Head2";
 import { Btns } from "../component/Btns";
 import { Songs } from "../component/Songs";
 

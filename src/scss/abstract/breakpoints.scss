@@ -1,4 +1,4 @@
-// Breakpoints for responsive design
+
 $mobile-small: 320px;
 $mobile: 480px;
 $tablet: 768px;
@@ -7,7 +7,7 @@ $desktop: 1200px;
 $desktop-large: 1440px;
 $desktop-xl: 1920px;
 
-// Media query mixins
+
 @mixin mobile-small {
   @media (max-width: #{$mobile-small}) {
     @content;
@@ -50,7 +50,7 @@ $desktop-xl: 1920px;
   }
 }
 
-// Range mixins
+
 @mixin mobile-only {
   @media (max-width: #{$tablet - 1px}) {
     @content;

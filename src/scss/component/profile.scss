@@ -1,0 +1,210 @@
+@use "../abstract/variables.scss" as *;
+@use "../abstract/breakpoints.scss" as *;
+
+.profile-container {
+  margin-bottom: 0;
+  padding: 0;
+  
+  @include mobile {
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+.profile-info {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  align-items: center;
+  
+  @include mobile {
+    gap: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+  }
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  
+  @include mobile {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.profile-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(233, 63, 91, 0.2), rgba(255, 196, 0, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  
+  @include mobile {
+    width: 50px;
+    height: 50px;
+    
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2.3rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  
+  @include mobile {
+    font-size: 1.8rem;
+  }
+}
+
+.profile-email {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  
+  @include mobile {
+    font-size: 1.2rem;
+  }
+}
+
+.profile-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  
+  @include mobile {
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+}
+
+.profile-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 10rem;
+  justify-content: center;
+  
+  @include mobile {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  &--primary {
+    background: linear-gradient(135deg, $primary-color1, #d63384);
+    color: white;
+    
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(233, 63, 91, 0.4);
+    }
+  }
+  
+  &--secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+  }
+  
+  &--danger {
+    background: rgba(220, 53, 69, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+    
+    &:hover:not(:disabled) {
+      background: rgba(220, 53, 69, 0.3);
+      color: white;
+      transform: translateY(-1px);
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.profile-loading {
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.profile-skeleton {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  
+  &::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.1) 25%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      rgba(255, 255, 255, 0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  &::after {
+    content: '';
+    width: 150px;
+    height: 20px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.1) 25%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      rgba(255, 255, 255, 0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite 0.3s;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

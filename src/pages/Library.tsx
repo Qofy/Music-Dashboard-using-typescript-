@@ -1,5 +1,7 @@
 import "../scss/pages/library.scss";
 import { NavLink, Outlet } from "react-router-dom";
+import { useMobileMenuContext } from "./Home";
+import { useIsMobile } from "../hooks/useMediaQuery";
 
 const libraryHeadStyl = {
   display: "flex",
@@ -14,6 +16,17 @@ const subConStyl = {
 };
 
 export function Library() {
+  const mobileMenuContext = useMobileMenuContext();
+  const isMobile = useIsMobile();
+
+  const handleLibraryNavClick = () => {
+    if (mobileMenuContext && isMobile) {
+      setTimeout(() => {
+        mobileMenuContext.close();
+      }, 150);
+    }
+  };
+
   return (
     <div className="library-container">
       <div className="library-sub__Container" style={subConStyl}>
@@ -24,18 +37,21 @@ export function Library() {
               <NavLink 
                 className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
                 to="artist"
+                onClick={handleLibraryNavClick}
               >
                 Artist
               </NavLink>
               <NavLink 
                 className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
                 to="album"
+                onClick={handleLibraryNavClick}
               >
                 Album
               </NavLink>
               <NavLink 
                 className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} 
                 to="songs"
+                onClick={handleLibraryNavClick}
               >
                 Songs
               </NavLink>

@@ -1,4 +1,4 @@
-// Common types for the Music Dashboard
+
 
 export interface Song {
   id: string;
@@ -55,7 +55,7 @@ export interface SearchResults {
   playlists: Playlist[];
 }
 
-// Component Props Types
+
 export interface SliderProps {
   images: string[];
   autoPlay?: boolean;
@@ -79,7 +79,7 @@ export interface FooterControlsProps {
   onVolumeChange: (volume: number) => void;
 }
 
-// API Response Types
+
 export interface ApiResponse<T> {
   data: T;
   success: boolean;
@@ -93,4 +93,19 @@ export interface PaginatedResponse<T> extends ApiResponse<T[]> {
     total: number;
     totalPages: number;
   };
+}
+
+export interface AuthUser {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  photoURL: string | null;
+  emailVerified: boolean;
+}
+
+export interface AuthContextType {
+  user: AuthUser | null;
+  loading: boolean;
+  signIn: () => Promise<boolean>;
+  signOut: () => Promise<boolean>;
 }

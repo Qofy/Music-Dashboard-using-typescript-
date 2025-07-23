@@ -9,6 +9,7 @@
   margin: 0;
   max-height: calc(100vh - 100px);
   width: 100%;
+  box-sizing: border-box;
   
   @include desktop {
     padding: 0 4rem;
@@ -43,8 +44,6 @@
     background-color: rgba(0, 0, 0, 0.2); 
     border-radius: 4px; 
   }
-  
-  box-sizing: border-box;
   
   & > * {
     max-width: 100%;

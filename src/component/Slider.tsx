@@ -30,7 +30,6 @@ export function Slider({
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   }, [images.length]);
 
-  // Auto Slider
   useEffect(() => {
     if (!autoPlay) return;
     

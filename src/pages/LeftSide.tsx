@@ -7,10 +7,14 @@ import "../scss/pages/left.scss"
 export function LeftSide(){
   return(
     <div className="left-side">
-      <Logo/>
-      <LeftCm1/>
-      <LeftCm2/>
-      <Profile/>
+      <div className="left-side__navigation">
+        <Logo/>
+        <LeftCm1/>
+        <LeftCm2/>
+      </div>
+      <div className="left-side__profile">
+        <Profile/>
+      </div>
     </div>
   )
 }
