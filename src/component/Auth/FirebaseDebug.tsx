@@ -2,7 +2,21 @@ import { useState } from 'react';
 import { auth } from '../../auth/firebase';
 
 export const FirebaseDebug = () => {
-  const [debugInfo, setDebugInfo] = useState<any>(null);
+  type DebugInfo = {
+    currentDomain: string;
+    currentOrigin: string;
+    firebaseConfig: {
+      apiKey: string;
+      authDomain: string;
+      projectId: string;
+    };
+    authState: {
+      currentUser: string;
+      userId: string;
+    };
+  };
+
+  const [debugInfo, setDebugInfo] = useState<DebugInfo | null>(null);
 
   const checkFirebaseConfig = () => {
     const config = {
@@ -10,8 +24,8 @@ export const FirebaseDebug = () => {
       currentOrigin: window.location.origin,
       firebaseConfig: {
         apiKey: auth.app.options.apiKey ? '✅ Present' : '❌ Missing',
-        authDomain: auth.app.options.authDomain,
-        projectId: auth.app.options.projectId,
+        authDomain: auth.app.options.authDomain ?? 'N/A',
+        projectId: auth.app.options.projectId ?? 'N/A',
       },
       authState: {
         currentUser: auth.currentUser ? '✅ Signed in' : '❌ Not signed in',
